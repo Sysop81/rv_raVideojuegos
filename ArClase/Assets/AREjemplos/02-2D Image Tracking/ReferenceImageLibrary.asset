@@ -27,3 +27,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: ImageReferenceUnityAdventure
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4921516785043389042
+      m_GuidHigh: 14661646805228862082
+    m_SerializedTextureGuid:
+      m_GuidLow: 15498125418505592461
+      m_GuidHigh: 6358069657318356570
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Poster
+    m_Texture: {fileID: 0}

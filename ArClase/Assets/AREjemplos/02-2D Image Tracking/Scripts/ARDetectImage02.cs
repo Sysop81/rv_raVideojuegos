@@ -35,6 +35,7 @@ public class ARDetectImage02 : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             _videoPlayer = trackedImage.GetComponentInChildren<VideoPlayer>();
+            //_videoPlayer.SetTargetAudioSource(0, _videoPlayer.GetComponent<AudioSource>());
             _videoPlayer.Play();
         }
         // If target is Update
@@ -47,6 +48,7 @@ public class ARDetectImage02 : MonoBehaviour
                 {
                     isImagegeTrackable = true;
                     _videoPlayer.gameObject.SetActive(true);
+                    //_videoPlayer.SetTargetAudioSource(0, _videoPlayer.GetComponent<AudioSource>());
                     _videoPlayer.Play();
                 }
             }
