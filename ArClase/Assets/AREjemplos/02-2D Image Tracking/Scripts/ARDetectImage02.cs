@@ -59,6 +59,7 @@ public class ARDetectImage02 : MonoBehaviour
                     isImagegeTrackable = false;
                     _videoPlayer.gameObject.SetActive(false);
                     _videoPlayer.Pause();
+                    Debug.Log("PAUSE");
                 }
             }
         }
