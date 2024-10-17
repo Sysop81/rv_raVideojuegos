@@ -2,21 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 [System.Serializable]
-public struct ModelInfo
-{
-    public GameObject model;
-    public string description;
-    public bool isActivated;
-}
+
 
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class DetectImage : MonoBehaviour
 {
     [SerializeField] private ModelInfo[] modelsInfo;
+    public UnityEvent<ModelInfo> OnDetect;
     private ARTrackedImageManager _imageManager;
     private Dictionary<string, ModelInfo> _imageDictionary;
     
@@ -103,6 +100,7 @@ public class DetectImage : MonoBehaviour
                 tempInfo.isActivated = true;
                 
                 _imageDictionary[trackedImage.referenceImage.name] = tempInfo;
+                OnDetect.Invoke(tempInfo); // call the handle
             }
         }
         else
