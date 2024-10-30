@@ -3389,7 +3389,7 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1711503131875754380}
+      - m_Target: {fileID: 67970508333132588}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4047,7 +4047,7 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4621506563227975918}
+      - m_Target: {fileID: 67970508333132588}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

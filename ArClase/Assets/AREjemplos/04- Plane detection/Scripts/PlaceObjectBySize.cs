@@ -23,6 +23,9 @@ public class PlaceObjectBySize : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_PlaneManager == null)
+            _PlaneManager = GetComponent<ARPlaneManager>();
+
         _PlaneManager.planesChanged += PlanesFound;
     }
     
