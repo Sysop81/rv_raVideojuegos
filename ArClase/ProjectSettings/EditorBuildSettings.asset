@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AREjemplos/03-2D Planet detection/ObjetoEnSuperficie.unity
+    path: Assets/AREjemplos/03- Plane detection/ObjetoEnSuperficie.unity
     guid: 69d81d194692ca442b0ac167673f1ce4
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0073bda5bed2ccf4db325736e7268fd5,
