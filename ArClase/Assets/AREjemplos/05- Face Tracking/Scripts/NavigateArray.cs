@@ -11,12 +11,17 @@ public class NavigateArray : MonoBehaviour
     [Header("References")] 
     [SerializeField] private Button leftButton;
     [SerializeField] private Button rightButton;
+    [SerializeField] private Toggle toggle;
 
     public UnityAction<int> OnMove;
     
     private int currentIndex;
     private int arrayLength;
     private bool isLoop;
+    
+    private string _toggleOnText = "Activado";
+    private string _toggleOffText = "Desactivado";
+    private Text _toggleText;
 
     public void Initialize(int arrayLength_, bool isLoop_, UnityAction<int> callback_)
     {
@@ -27,6 +32,13 @@ public class NavigateArray : MonoBehaviour
         
         leftButton.onClick.AddListener(MoveLeft);
         rightButton.onClick.AddListener(MoveRight);
+        
+        
+        toggle.onValueChanged.AddListener(ManageButtonsArray);
+        leftButton.interactable = toggle.isOn;
+        rightButton.interactable = toggle.isOn;
+        _toggleText = toggle.GetComponentInChildren<Text>();
+        _toggleText.text = _toggleOnText;
 
         CheckButtonState();
     }
@@ -62,5 +74,13 @@ public class NavigateArray : MonoBehaviour
             leftButton.interactable = currentIndex != 0;
             rightButton.interactable = currentIndex != arrayLength;
         }
+    }
+
+    private void ManageButtonsArray(bool value)
+    {
+        leftButton.interactable = value;
+        rightButton.interactable = value;
+        
+        _toggleText.text = value ? _toggleOnText : _toggleOffText;
     }
 }
