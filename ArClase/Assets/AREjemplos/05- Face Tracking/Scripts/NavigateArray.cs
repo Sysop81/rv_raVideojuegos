@@ -35,8 +35,7 @@ public class NavigateArray : MonoBehaviour
         
         
         toggle.onValueChanged.AddListener(ManageButtonsArray);
-        leftButton.interactable = toggle.isOn;
-        rightButton.interactable = toggle.isOn;
+        isLoop = toggle.isOn;
         _toggleText = toggle.GetComponentInChildren<Text>();
         _toggleText.text = _toggleOnText;
 
@@ -78,9 +77,15 @@ public class NavigateArray : MonoBehaviour
 
     private void ManageButtonsArray(bool value)
     {
-        leftButton.interactable = value;
-        rightButton.interactable = value;
-        
+        isLoop = value;
+
+        if (value)
+        {
+            leftButton.interactable = value;
+            rightButton.interactable = value;
+        }
+
         _toggleText.text = value ? _toggleOnText : _toggleOffText;
+        CheckButtonState();
     }
 }
