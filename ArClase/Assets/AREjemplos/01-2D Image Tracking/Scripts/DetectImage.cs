@@ -17,6 +17,11 @@ public class DetectImage : MonoBehaviour
     private ARTrackedImageManager _imageManager;
     private Dictionary<string, ModelInfo> _imageDictionary;
     
+    public void Awake()
+    {
+        _imageManager = GetComponent<ARTrackedImageManager>();
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,12 +41,6 @@ public class DetectImage : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
         _imageManager.trackedImagesChanged += ImageFound;
@@ -52,10 +51,7 @@ public class DetectImage : MonoBehaviour
         _imageManager.trackedImagesChanged -= ImageFound;
     }
 
-    public void Awake()
-    {
-        _imageManager = GetComponent<ARTrackedImageManager>();
-    }
+    
 
     private void ImageFound(ARTrackedImagesChangedEventArgs eventArgs)
     {

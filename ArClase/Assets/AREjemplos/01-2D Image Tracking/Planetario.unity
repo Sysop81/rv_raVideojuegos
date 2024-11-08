@@ -1101,10 +1101,10 @@ MonoBehaviour:
   - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
     description: El gran Jupiter
     isActivated: 0
-  - model: {fileID: 4419806672154752147, guid: ae85e8ab2e3c73a41a0248140da57364, type: 3}
+  - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
     description: "El peque\xF1o Marte"
     isActivated: 0
-  - model: {fileID: 5521150081943761698, guid: 23d6db2a3e01eb84b919c4bcaa02885c, type: 3}
+  - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
     description: El mediano Neptuno
     isActivated: 0
   OnDetect:

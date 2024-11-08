@@ -23,8 +23,8 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 2145035069938356828
       m_GuidHigh: 8278289637987609482
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
     m_Name: Jupiter
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
@@ -33,8 +33,8 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 17308484530447163708
       m_GuidHigh: 1443852599502925978
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
     m_Name: Mars
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 1519107554145943546
       m_GuidHigh: 6017682313847421738
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
     m_Name: Neptune
     m_Texture: {fileID: 0}
