@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class TouchController : MonoBehaviour
 {
     public UnityEvent OnTouch;
-
+    
     private void OnMouseDown()
     {
         OnTouch.Invoke();
