@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AREjemplos/01-2D Image Tracking/Planetario.unity
-    guid: 5566d34dbe6e26e48b537878159a510b
+    path: Assets/AREjemplos/06 - Device Tracking/MurcielaGO.unity
+    guid: 0d2d52f0faefa1840957d17638ccd9b9
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0073bda5bed2ccf4db325736e7268fd5,
       type: 2}
