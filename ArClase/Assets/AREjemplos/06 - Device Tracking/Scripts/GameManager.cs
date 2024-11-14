@@ -13,19 +13,21 @@ public class GameManager : MonoBehaviour
     {
         UpdateScore();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
+    /// <summary>
+    /// Method AddScore
+    /// This method update the game score varible
+    /// </summary>
     public void AddScore()
     {
         score++;
         UpdateScore();
     }
-
+    
+    /// <summary>
+    /// Method UpdateScore
+    /// This method update the canvas panel label to show score info 
+    /// </summary>
     private void UpdateScore()
     {
         scoreText.text = string.Format("Score: {0}", score);
