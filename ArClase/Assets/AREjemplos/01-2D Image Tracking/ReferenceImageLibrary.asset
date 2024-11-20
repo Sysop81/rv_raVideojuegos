@@ -35,7 +35,7 @@ MonoBehaviour:
       m_GuidHigh: 1443852599502925978
     m_Size: {x: 1, y: 1}
     m_SpecifySize: 1
-    m_Name: Mars
+    m_Name: Marte
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4960064392589794833
@@ -45,5 +45,15 @@ MonoBehaviour:
       m_GuidHigh: 6017682313847421738
     m_Size: {x: 1, y: 1}
     m_SpecifySize: 1
-    m_Name: Neptune
+    m_Name: Neptuno
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5434797406273999109
+      m_GuidHigh: 10519053897408905407
+    m_SerializedTextureGuid:
+      m_GuidLow: 11314318771613018152
+      m_GuidHigh: 16666464130528980520
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
+    m_Name: Saturno
     m_Texture: {fileID: 0}

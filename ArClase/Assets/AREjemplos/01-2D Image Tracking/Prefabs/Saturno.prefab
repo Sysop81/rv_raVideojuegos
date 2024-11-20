@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &52586236569422422
+--- !u!1001 &60285173740457811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,22 +11,22 @@ PrefabInstance:
     - target: {fileID: 4462113022191926981, guid: d644841bf222f2447ab9db3ed6fa6a39,
         type: 3}
       propertyPath: m_Name
-      value: Marte
+      value: Saturno
       objectReference: {fileID: 0}
     - target: {fileID: 5278224485495373113, guid: d644841bf222f2447ab9db3ed6fa6a39,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5278224485495373113, guid: d644841bf222f2447ab9db3ed6fa6a39,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5278224485495373113, guid: d644841bf222f2447ab9db3ed6fa6a39,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5278224485495373113, guid: d644841bf222f2447ab9db3ed6fa6a39,
         type: 3}
@@ -82,7 +82,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e855a44c344c4c49b9560433d9d006d, type: 2}
+      objectReference: {fileID: 2100000, guid: f9472e6a2ded39c4593f4fc19e185f1f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

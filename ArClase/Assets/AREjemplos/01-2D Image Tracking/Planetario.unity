@@ -426,8 +426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 194}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -54.42, y: 162.401}
+  m_SizeDelta: {x: 737.177, y: 134.263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334469892
 MonoBehaviour:
@@ -476,15 +476,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -644,8 +644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -64}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 3.513, y: -151.774}
+  m_SizeDelta: {x: 1772.918, y: 274.702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &561210653
 MonoBehaviour:
@@ -694,8 +694,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1101,11 +1101,14 @@ MonoBehaviour:
   - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
     description: El gran Jupiter
     isActivated: 0
-  - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
+  - model: {fileID: 4419806672154752147, guid: ae85e8ab2e3c73a41a0248140da57364, type: 3}
     description: "El peque\xF1o Marte"
     isActivated: 0
-  - model: {fileID: 2391523619555776687, guid: b01931f8cd2b7404eaad69265e27eb75, type: 3}
+  - model: {fileID: 5521150081943761698, guid: 23d6db2a3e01eb84b919c4bcaa02885c, type: 3}
     description: El mediano Neptuno
+    isActivated: 0
+  - model: {fileID: 4412033590945198486, guid: 1fc4cdb6d126a204bb0048252b9aee2a, type: 3}
+    description: El planeta de los anillos
     isActivated: 0
   OnDetect:
     m_PersistentCalls:
