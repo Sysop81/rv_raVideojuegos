@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 
 [System.Serializable]
+
+// ModelInfo -> Struct object to map title and description planet properties in App canvas GUI
 public struct ModelInfo
 {
     public GameObject model;
@@ -13,12 +15,17 @@ public struct ModelInfo
 
 public class UpdateModelInfo : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _titleTXT;
-    [SerializeField] private TextMeshProUGUI _descriptionTXT;
-
+    [SerializeField] private TextMeshProUGUI titleTxt;
+    [SerializeField] private TextMeshProUGUI descriptionTxt;
+    
+    /// <summary>
+    /// Method ReceiveData
+    /// This method set the received data in all Text Mesh Pro GUI to update the planet info
+    /// </summary>
+    /// <param name="data">Planet data info</param>
     public void ReceiveData(ModelInfo data)
     {
-        _titleTXT.text = data.model.name;
-        _descriptionTXT.text = data.description;
+        titleTxt.text = data.model.name;
+        descriptionTxt.text = data.description;
     }
 }

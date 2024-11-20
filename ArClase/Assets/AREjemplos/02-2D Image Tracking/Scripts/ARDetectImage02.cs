@@ -10,56 +10,66 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ARDetectImage02 : MonoBehaviour
 {
-    [SerializeField] private ARTrackedImageManager _imageManager;
+    [SerializeField] private ARTrackedImageManager imageManager;
     private VideoPlayer _videoPlayer;
-    private bool isImagegeTrackable;
+    private bool _isImagegeTrackable;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method OnEnable [Handler]
+    /// This method subscribes the property _imageManager to method ImageFound when the tracked image changes
+    /// </summary>
     private void OnEnable()
     {
         // Is image is tracked by _imageManager call to handler ImageFound
-        _imageManager.trackedImagesChanged += ImageFound;
+        imageManager.trackedImagesChanged += ImageFound;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Method OnDisable [Handler]
+    /// This method unsubscribes the property to method
+    /// </summary>
     private void OnDisable()
     {
-        // Disable app dessubcribe to handler _ImageFound
-        _imageManager.trackedImagesChanged -= ImageFound;
+        // unsubscribes to handler _ImageFound
+        imageManager.trackedImagesChanged -= ImageFound;
     }
     
-    // [Handler] Method ImageFoun -> params eventArgs
+    
+    /// <summary>
+    /// Method ImageFoun
+    /// This method tracks the captured images and if they correspond to those established in the ReferenceIamgeLibrary,
+    /// it plays the presentation video
+    /// </summary>
+    /// <param name="eventArgs"></param>
     private void ImageFound(ARTrackedImagesChangedEventArgs eventArgs)
     {
         // First time
         foreach (var trackedImage in eventArgs.added)
         {
             _videoPlayer = trackedImage.GetComponentInChildren<VideoPlayer>();
-            //_videoPlayer.SetTargetAudioSource(0, _videoPlayer.GetComponent<AudioSource>());
             _videoPlayer.Play();
         }
+        
         // If target is Update
         foreach (var trackedImage in eventArgs.updated)
         {
             // Is target tracked
             if (trackedImage.trackingState == TrackingState.Tracking)
             {
-                if (!isImagegeTrackable)
+                if (!_isImagegeTrackable)
                 {
-                    isImagegeTrackable = true;
+                    _isImagegeTrackable = true;
                     _videoPlayer.gameObject.SetActive(true);
-                    //_videoPlayer.SetTargetAudioSource(0, _videoPlayer.GetComponent<AudioSource>());
                     _videoPlayer.Play();
                 }
             }
             else if (trackedImage.trackingState == TrackingState.Limited)
             { // Is target is not tracking "Not visible"
-                if (isImagegeTrackable)
+                if (_isImagegeTrackable)
                 {
-                    isImagegeTrackable = false;
+                    _isImagegeTrackable = false;
                     _videoPlayer.gameObject.SetActive(false);
                     _videoPlayer.Pause();
-                    Debug.Log("PAUSE");
                 }
             }
         }

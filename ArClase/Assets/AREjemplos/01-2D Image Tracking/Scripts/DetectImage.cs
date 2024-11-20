@@ -7,8 +7,6 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 [System.Serializable]
-
-
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class DetectImage : MonoBehaviour
 {
@@ -17,12 +15,17 @@ public class DetectImage : MonoBehaviour
     private ARTrackedImageManager _imageManager;
     private Dictionary<string, ModelInfo> _imageDictionary;
     
+    /// <summary>
+    /// Method Awake [Life cycles]
+    /// </summary>
     public void Awake()
     {
         _imageManager = GetComponent<ARTrackedImageManager>();
     }
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start [Life cycle]
+    /// </summary>
     void Start()
     {
         _imageDictionary = new Dictionary<string, ModelInfo>();
@@ -40,19 +43,32 @@ public class DetectImage : MonoBehaviour
             _imageDictionary.Add(tempModel.name, tempInfo);
         }
     }
-
+    
+    /// <summary>
+    /// Method OnEnable
+    /// This method subscribes the property to method ImageFound
+    /// </summary>
     private void OnEnable()
     {
         _imageManager.trackedImagesChanged += ImageFound;
     }
-
+    
+    /// <summary>
+    /// Method OnDisable
+    /// This method unsubscribes the property to ImageFound
+    /// </summary>
     private void OnDisable()
     {
         _imageManager.trackedImagesChanged -= ImageFound;
     }
 
     
-
+    /// <summary>
+    /// Method ImageFound
+    /// This method checks the tracked images to see if they correspond to those established in the library to display
+    /// the 3D model of the planet and its information on the canvas.
+    /// </summary>
+    /// <param name="eventArgs"></param>
     private void ImageFound(ARTrackedImagesChangedEventArgs eventArgs)
     {
         foreach (var trackedImage in eventArgs.added)
@@ -80,7 +96,13 @@ public class DetectImage : MonoBehaviour
             ChangeModelState(trackedImage, false);
         }
     }
-
+    
+    /// <summary>
+    /// Method ChangeModelState
+    /// This method activates or desactivates the 3d planet and GUI information.
+    /// </summary>
+    /// <param name="trackedImage"></param>
+    /// <param name="show"></param>
     private void ChangeModelState(ARTrackedImage trackedImage, bool show)
     {
         GameObject currentModel = _imageDictionary[trackedImage.referenceImage.name].model;
@@ -88,7 +110,7 @@ public class DetectImage : MonoBehaviour
 
         if (show)
         {
-            if (!isModelActivated(trackedImage))
+            if (!IsModelActivated(trackedImage))
             {
                 currentModel.SetActive(true);
                 ModelInfo tempInfo = _imageDictionary[trackedImage.referenceImage.name];
@@ -101,7 +123,7 @@ public class DetectImage : MonoBehaviour
         }
         else
         {
-            if (isModelActivated(trackedImage))
+            if (IsModelActivated(trackedImage))
             {
                 currentModel.SetActive(false);
                 ModelInfo tempInfo = _imageDictionary[trackedImage.referenceImage.name];
@@ -111,8 +133,14 @@ public class DetectImage : MonoBehaviour
             }
         }
     }
-
-    private bool isModelActivated(ARTrackedImage trackedImage)
+    
+    /// <summary>
+    /// Method IsModelActivated
+    /// This method determines is the current model is activated or not
+    /// </summary>
+    /// <param name="trackedImage"></param>
+    /// <returns></returns>
+    private bool IsModelActivated(ARTrackedImage trackedImage)
     {
         return _imageDictionary[trackedImage.referenceImage.name].isActivated;
     }

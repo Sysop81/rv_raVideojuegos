@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class PlanetManager : MonoBehaviour
+public class PlaneManager : MonoBehaviour
 {
     
     [SerializeField] private ARPlaneManager arPlaneManager;
@@ -12,23 +12,34 @@ public class PlanetManager : MonoBehaviour
     private List<ARPlane> planes = new List<ARPlane>();
     private GameObject modelEDPlaced;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method OnEnable [Handler]
+    /// Subscribe the property to method PlaneFound
+    /// </summary>
     void OnEnable()
     {
-        arPlaneManager.planesChanged += PlanetFound;
+        arPlaneManager.planesChanged += PlaneFound;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Method OnDisable
+    /// Unsubscribe the property to method PlaneFound
+    /// </summary>
     void OnDisable()
     {
-        arPlaneManager.planesChanged -= PlanetFound;
+        arPlaneManager.planesChanged -= PlaneFound;
     }
-
-    private void PlanetFound(ARPlanesChangedEventArgs planetData)
+    
+    /// <summary>
+    /// Method PlaneFound
+    /// This method checks the detected plane to see if it is possible to place the cube prefab
+    /// </summary>
+    /// <param name="planeData"></param>
+    private void PlaneFound(ARPlanesChangedEventArgs planeData)
     {
-        if (planetData.added != null && planetData.added.Count > 0)
+        if (planeData.added != null && planeData.added.Count > 0)
         {
-            planes.AddRange(planetData.added);
+            planes.AddRange(planeData.added);
         }
 
         foreach (var plane in planes)
@@ -39,12 +50,16 @@ public class PlanetManager : MonoBehaviour
                 float yOffset = modelEDPlaced.transform.localScale.y / 2;
                 modelEDPlaced.transform.position = new Vector3(plane.center.x, plane.center.y + yOffset, plane.center.z);
                 modelEDPlaced.transform.forward = plane.normal;
-                StopPlanetDetection();
+                StopPlaneDetection();
             }
         }
     }
-
-    private void StopPlanetDetection()
+    
+    /// <summary>
+    /// Method StopPlaneDetection
+    /// This method stops the detection of planes
+    /// </summary>
+    private void StopPlaneDetection()
     {
         arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
         foreach (var plane in planes)

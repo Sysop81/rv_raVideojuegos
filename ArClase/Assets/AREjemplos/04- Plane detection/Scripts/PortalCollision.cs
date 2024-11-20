@@ -11,13 +11,19 @@ public class PortalCollision : MonoBehaviour
     public UnityEvent OnCollision;
     
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start
+    /// </summary>
     void Start()
     {
         if(executionOnStart)
             OnCollision.Invoke();
     }
-
+    
+    /// <summary>
+    /// Method OnTriggerEnter
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         OnCollision.Invoke();

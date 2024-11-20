@@ -1,16 +1,18 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;*/
 using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start [Life cycles]
+    /// </summary>
     void Start()
     {
+        // Set the radius of camera sphereCollider
         SphereCollider sphereCollider = gameObject.AddComponent<SphereCollider>();
         sphereCollider.radius = 0.1f;
-        
+        // Set the camera rb to kinematic
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
         rb.isKinematic = true;
     }
