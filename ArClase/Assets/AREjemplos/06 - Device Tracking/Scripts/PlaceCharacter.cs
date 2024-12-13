@@ -9,7 +9,10 @@ public class PlaceCharacter : MonoBehaviour
     private Transform player;
     private AudioSource _audioSource;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         _audioSource = Camera.main.GetComponent<AudioSource>();
@@ -50,5 +53,4 @@ public class PlaceCharacter : MonoBehaviour
             transform.position.y,Random.insideUnitSphere.z * distance);
         transform.LookAt(player);
     }
-
 }

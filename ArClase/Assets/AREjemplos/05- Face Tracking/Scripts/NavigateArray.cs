@@ -22,7 +22,14 @@ public class NavigateArray : MonoBehaviour
     private string _toggleOnText = "Activado";
     private string _toggleOffText = "Desactivado";
     private Text _toggleText;
-
+    
+    /// <summary>
+    /// Method Initialize
+    /// This method initialized all navigation UI controls
+    /// </summary>
+    /// <param name="arrayLength_"></param>
+    /// <param name="isLoop_"></param>
+    /// <param name="callback_"></param>
     public void Initialize(int arrayLength_, bool isLoop_, UnityAction<int> callback_)
     {
         currentIndex = 0;
@@ -32,8 +39,7 @@ public class NavigateArray : MonoBehaviour
         
         leftButton.onClick.AddListener(MoveLeft);
         rightButton.onClick.AddListener(MoveRight);
-        
-        
+        // Manage the toggle action to activate // desactivate circular array navigation
         toggle.onValueChanged.AddListener(ManageButtonsArray);
         isLoop = toggle.isOn;
         _toggleText = toggle.GetComponentInChildren<Text>();
@@ -41,7 +47,11 @@ public class NavigateArray : MonoBehaviour
 
         CheckButtonState();
     }
-
+    
+    /// <summary>
+    /// Method MoveLeft [Handler]
+    /// This method manages the left UI button to decrement face mask
+    /// </summary>
     private void MoveLeft()
     {
         currentIndex--;
@@ -53,7 +63,11 @@ public class NavigateArray : MonoBehaviour
         CheckButtonState();
         OnMove.Invoke(currentIndex);
     }
-
+    
+    /// <summary>
+    /// Method MoveRight [Handler]
+    /// This method increment the right UI button to increment face mask
+    /// </summary>
     private void MoveRight()
     {
         currentIndex++;
@@ -65,7 +79,11 @@ public class NavigateArray : MonoBehaviour
         CheckButtonState();
         OnMove.Invoke(currentIndex);
     }
-
+    
+    /// <summary>
+    /// Method CheckButtonState
+    /// This method manages limits when circular loop is disabled
+    /// </summary>
     private void CheckButtonState()
     {
         if(!isLoop)
@@ -74,7 +92,12 @@ public class NavigateArray : MonoBehaviour
             rightButton.interactable = currentIndex != arrayLength;
         }
     }
-
+    
+    /// <summary>
+    /// Method ManageButtonsArray
+    /// This method manages the loop variable. Activate or desactivate when user touch the toggle 
+    /// </summary>
+    /// <param name="value">bool Activate or desactivare</param>
     private void ManageButtonsArray(bool value)
     {
         isLoop = value;

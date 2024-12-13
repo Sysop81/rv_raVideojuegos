@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         UpdateScore();
