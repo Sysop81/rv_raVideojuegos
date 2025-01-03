@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AREjemplos/07- Car plane detection/CarPlaneDetection.unity
-    guid: 4a11b69102e3a734281f9f8ae637a0f7
+    path: Assets/AREjemplos/02-2D Image Tracking/VideoPresentacion.unity
+    guid: 89f124696aa76b347abfea2659159acb
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0073bda5bed2ccf4db325736e7268fd5,
       type: 2}
