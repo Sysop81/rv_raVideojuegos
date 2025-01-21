@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/VR Ejemplos/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/VR Ejemplos/01-Navegacion/CarlitosRoom.unity
+    guid: d4d5c74e65f7f744fb5cfb43fc5e8f91
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6cae52a458b7f1944ba7d91b214d7d27,
       type: 2}
