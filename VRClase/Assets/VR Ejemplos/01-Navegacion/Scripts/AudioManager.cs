@@ -6,20 +6,24 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Method Start
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
+    /// <summary>
+    /// Trigger OnCollisionEnter
+    /// </summary>
+    /// <param name="collision">Collision Object</param>
     void OnCollisionEnter(Collision collision)
     {
-        audioSource.Play();
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            audioSource.Play();
+        }
     }
 }
