@@ -15,6 +15,7 @@
  */
 
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 /**
@@ -24,6 +25,15 @@ public class CarBehaviour : MonoBehaviour
 {
     public ReticleBehaviour Reticle;
     public float Speed = 1.2f;
+    private TextMeshProUGUI _scoreText;
+    private int _counter;
+    private AudioSource _audio;
+    [SerializeField] private ParticleSystem particleSystem;
+    private void Start()
+    {
+        _scoreText = GameObject.FindWithTag("Score").GetComponent<TextMeshProUGUI>();
+        _audio = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -45,7 +55,12 @@ public class CarBehaviour : MonoBehaviour
         var Package = other.GetComponent<PackageBehaviour>();
         if (Package != null)
         {
+            var ps = Instantiate(particleSystem, transform.position, transform.rotation);
+            ps.Play();
             Destroy(other.gameObject);
+            _counter++;
+            _audio.Play();
+            _scoreText.text = $"Score: {_counter.ToString()}";
         }
     }
 }
